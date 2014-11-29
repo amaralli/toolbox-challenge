@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang= "en">
+	<head>
+		<meta charset= "utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Allison's Game Board</title>
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="row">
+				<header class="col-sm-12 text-center">
+					<h1>The Best Game in the World!</h1>
+					<p class="lead">Just kidding, it's just a matching game...</p>
+				</header>
+			</div>
+
+			<div class="gameStats">
+				<div class="row">
+					<label for="timer" class="col-sm-2">Timer</label>
+					<div class="col-sm-1">
+						<div class="stat-element" id="timer">
+							<p>10:00</p>
+						</div>
+					</div>
+					<label for="incorrectGuesses" class="col-sm-2">Incorrect Guesses</label>
+					<div class="col-sm-1">
+						<div class="stat-element" id="incorrectGuesses">
+							<p>100</p>
+						</div>
+					</div>
+
+					<label for="matchesCorrect" class="col-sm-2">Number of Correct Matches</label>
+					<div class="col-sm-1">
+						<div class="stat-element" id="matchesCorrect">
+							<p>200</p>
+						</div>
+					</div>
+					<label for="matchesLeft" class="col-sm-2">Number of Matches Left</label>
+					<div class="col-sm-1">
+						<div class="stat-element" id="matchesLeft">
+							<p>3</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-12 text-center">
+					<div class="info-bar">
+						<h2>Don't know how to play?</h2>
+						<p><a href= "http://google.com">Check here for more information</a></p>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-12 text-center">
+					<button type="button" id="newGameButton" class="btn btn-info btn-lg">Start a New Game!</button>
+				</div>
+			</div>
+
+			<div class="gameboard">
+			</div>
+
+			<footer>
+			</footer>
+
+		</div> <!-- .container -->
+
+		<script type="text/javascript" 
+				src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script type="text/javascript"
+				src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+		<script type="text/javascript" 
+				src="js/app.js"></script>
+	</body>
+		
+</html>
