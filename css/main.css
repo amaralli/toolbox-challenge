@@ -17,10 +17,11 @@ body {
     padding: 1em;
 }
 
-.gameStats {
+#gameStats {
     padding: 2em;
     background-color: #5FA480;
     opacity: 0.9;
+    border-radius: 30px;
 }
 
 #buttonRow {
@@ -32,6 +33,7 @@ body {
     background-color: #353058;
     opacity: 0.9;
     float: left;
+    margin: 5px;
 }
 
 .btn {
@@ -45,4 +47,18 @@ a:link {
 
 a:focus, a:hover {
     color: #507A5B;
+}
+
+.col-sm-12 {
+    margin: 0;
+}
+
+.header {
+    background-color: #8f71b2;
+    border-radius: 40px;
+    margin: 10px;
+}
+
+#gameStats h4{
+    text-align: center;
 }

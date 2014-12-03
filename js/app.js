@@ -39,37 +39,41 @@ function onReady() {
 	$('.gameboard img').click(function() {
 		var clickedImage = $(this);
 		var tile = clickedImage.data("assocTile");
-		flipImage(clickedImage, tile);
 		var originalImage = $(document.getElementById("activeTile"));
-		setTimeout(function() {
-			if(!originalImage.length) {
-				console.log("first tile");
-				clickedImage.attr("id", "activeTile");
-			} else {
-				console.log("second tile");
-				if(clickedImage.attr('src') != originalImage.attr('src')) {
-					console.log("no match");
-				 	var originalTile = originalImage.data('assocTile');
-				 	flipImage(clickedImage, tile);
-				 	flipImage(originalImage, originalTile);
-				 	numIncorrect++;
-				 	console.log(incorrectGuesses);
-				 	var incorrectGuessNum = document.getElementById("incorrectGuesses");
-				 	incorrectGuessNum.innerHTML = numIncorrect;
-				} else {
-					numPairs++;
-					var correctPairs = document.getElementById("matchesCorrect");
-					correctPairs.innerHTML = numPairs;
-					var pairsLeft = document.getElementById("matchesLeft");
-					pairsLeft.innerHTML = 9 - numPairs;
-					console.log("match");
-					console.log(numPairs);
-				}
-				originalImage.attr("id", "");
-			}
-		}, 1000);
-
+        if(originalImage.length) {
+            if(clickedImage !== originalImage) {
+                flipImage(clickedImage, tile);
+                setTimeout(function () {
+                    if (clickedImage.attr('src') != originalImage.attr('src')) {
+                        console.log("second tile");
+                        console.log("no match");
+                        var originalTile = originalImage.data('assocTile');
+                        flipImage(clickedImage, tile);
+                        flipImage(originalImage, originalTile);
+                        numIncorrect++;
+                        console.log(incorrectGuesses);
+                        var incorrectGuessNum = document.getElementById("incorrectGuesses");
+                        incorrectGuessNum.innerHTML = numIncorrect;
+                    } else {
+                        numPairs++;
+                        var correctPairs = document.getElementById("matchesCorrect");
+                        correctPairs.innerHTML = numPairs;
+                        var pairsLeft = document.getElementById("matchesLeft");
+                        pairsLeft.innerHTML = 9 - numPairs;
+                        console.log("match");
+                        console.log(numPairs);
+                    }
+                    originalImage.attr("id", "");
+                }, 1000);
+            }
+        } else {
+            flipImage(clickedImage, tile);
+            console.log("first tile");
+            clickedImage.attr("id", "activeTile");
+        }
 	});
+
+
 
 	function flipImage(clickedImage, tile) {
 		if(clickedImage.attr('src') == "img/kindajean.png") {
