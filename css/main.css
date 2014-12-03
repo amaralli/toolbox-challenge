@@ -1,0 +1,9 @@
+.gameboard img:nth-child(4n+1) {
+	clear: left;
+}
+
+.gameboard img {
+	float: center;
+	height: 200px;
+	width: 200px;
+}
