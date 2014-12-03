@@ -20,7 +20,7 @@ function onReady() {
 		var newTile = $(document.createElement('img'));
 		var newTileObject = new tile(tileArray[i]);
 		newTile.data("assocTile", newTileObject);
-		newTile.attr('src', "img/tile-back.png");
+		newTile.attr('src', "img/kindajean.png");
 		var copyTile = newTile.clone();
 		copyTile.data("assocTile", newTileObject);
 		completeArray[completeArray.length] = newTile;
@@ -72,11 +72,11 @@ function onReady() {
 	});
 
 	function flipImage(clickedImage, tile) {
-		if(clickedImage.attr('src') == "img/tile-back.png") {
+		if(clickedImage.attr('src') == "img/kindajean.png") {
 			console.log(tile.image);
 			clickedImage.attr('src', tile.image);
 		} else {
-			clickedImage.attr('src', 'img/tile-back.png');
+			clickedImage.attr('src', 'img/kindajean.png');
 		}
 	}
 

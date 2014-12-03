@@ -3,7 +3,46 @@
 }
 
 .gameboard img {
-	float: center;
+	float: none;
 	height: 200px;
 	width: 200px;
+    margin: 10px;
+}
+
+body {
+    background-image: url('../img/congruent_outline.png');
+    background-size: cover;
+    background-attachment: fixed;
+    color: #FFFFE0;
+    padding: 1em;
+}
+
+.gameStats {
+    padding: 2em;
+    background-color: #5FA480;
+    opacity: 0.9;
+}
+
+#buttonRow {
+    padding: 1em;
+}
+
+.gameboard {
+    padding: 2em;
+    background-color: #353058;
+    opacity: 0.9;
+    float: left;
+}
+
+.btn {
+    background-color: #4B6D73;
+    border-color:#558D98;
+}
+
+a:link {
+    color: #69AB78;
+}
+
+a:focus, a:hover {
+    color: #507A5B;
 }
