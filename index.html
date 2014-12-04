@@ -12,7 +12,7 @@
 	<body>
 		<div class="container">
             <div class="header">
-                <div class="row">
+                <div class="row" id="title">
                     <header class="col-sm-12 text-center">
                         <h1>The Best Game in the World!</h1>
                         <p class="lead">Just kidding, it's just a matching game...</p>
@@ -23,14 +23,14 @@
                     <div class="col-sm-12 text-center">
                         <div class="info-bar">
                             <h2>Don't know how to play?</h2>
-                            <p><a href= "http://google.com">Check here for more information</a></p>
+                            <p><a href= "http://en.wikipedia.org/wiki/Match_Game">Check here for more information</a></p>
                         </div>
                     </div>
                 </div>
 
                 <div class="row" id="buttonRow">
                     <div class="col-sm-12 text-center">
-                        <button type="button" id="newGameButton" class="btn btn-info btn-lg">Start a New Game!</button>
+                        <button type="button" id="newGameButton" class="btn btn-info btn-lg" ng-click="organizeTiles()">Start a New Game!</button>
                     </div>
                 </div>
             </div>

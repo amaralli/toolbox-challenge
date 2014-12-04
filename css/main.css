@@ -41,8 +41,10 @@ body {
     border-color:#558D98;
 }
 
-a:link {
-    color: #69AB78;
+a {
+    font-weight: bold;
+    color: #5FA481;
+    font-size: 16px;
 }
 
 a:focus, a:hover {
@@ -61,4 +63,12 @@ a:focus, a:hover {
 
 #gameStats h4{
     text-align: center;
+}
+
+#title {
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
 }

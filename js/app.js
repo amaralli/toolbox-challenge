@@ -1,40 +1,20 @@
 $(onReady);
 
 function onReady() {
+	var numPairs = 0;
+	var numIncorrect = 0;
+	var storedImage = null;
+	var interval = null;
+
 	function tile(image) {
 		this.image = image;
 	};
+	
+	$("#newGameButton").click(function () {
+		organizeTiles();
+	});
 
-	var gameboard = $('.gameboard');
-
-	var tileArray = [];
-	for(var i = 1; i < 33; i++) {
-		var value= "img/tile" + i +".jpg";
-		tileArray[tileArray.length] = value;
-	}
-
-	tileArray = _.shuffle(tileArray);
-
-	var completeArray = [];
-	for(var i = 0; i < 8; i++) {
-		var newTile = $(document.createElement('img'));
-		var newTileObject = new tile(tileArray[i]);
-		newTile.data("assocTile", newTileObject);
-		newTile.attr('src', "img/kindajean.png");
-		var copyTile = newTile.clone();
-		copyTile.data("assocTile", newTileObject);
-		completeArray[completeArray.length] = newTile;
-		completeArray[completeArray.length] = copyTile;
-	}
-
-	completeArray = _.shuffle(completeArray);
-	for(var i = 0; i < completeArray.length; i++){
-		gameboard.append(completeArray[i]);
-		console.log(completeArray[i]);	
-	}
-
-	var numPairs = 0;
-	var numIncorrect = 0;
+	organizeTiles();
 
 	$('.gameboard img').click(function() {
 		var clickedImage = $(this);
@@ -59,7 +39,12 @@ function onReady() {
                         var correctPairs = document.getElementById("matchesCorrect");
                         correctPairs.innerHTML = numPairs;
                         var pairsLeft = document.getElementById("matchesLeft");
-                        pairsLeft.innerHTML = 9 - numPairs;
+                        var numLeft = 8s - numPairs;
+                        pairsLeft.innerHTML = numLeft;
+                        if(numLeft == 0) {
+                        	window.alert("winner!");
+                        	organizeTiles();
+                        }
                         console.log("match");
                         console.log(numPairs);
                     }
@@ -73,7 +58,35 @@ function onReady() {
         }
 	});
 
+	function organizeTiles() {
+		var gameboard = $('.gameboard');
 
+		var tileArray = [];
+		for(var i = 1; i < 33; i++) {
+			var value= "img/tile" + i +".jpg";
+			tileArray[tileArray.length] = value;
+		}
+
+		tileArray = _.shuffle(tileArray);
+
+		var completeArray = [];
+		for(var i = 0; i < 8; i++) {
+			var newTile = $(document.createElement('img'));
+			var newTileObject = new tile(tileArray[i]);
+			newTile.data("assocTile", newTileObject);
+			newTile.attr('src', "img/kindajean.png");
+			var copyTile = newTile.clone();
+			copyTile.data("assocTile", newTileObject);
+			completeArray[completeArray.length] = newTile;
+			completeArray[completeArray.length] = copyTile;
+		}
+
+		completeArray = _.shuffle(completeArray);
+		for(var i = 0; i < completeArray.length; i++){
+			gameboard.append(completeArray[i]);
+			console.log(completeArray[i]);	
+		}
+	}
 
 	function flipImage(clickedImage, tile) {
 		if(clickedImage.attr('src') == "img/kindajean.png") {
